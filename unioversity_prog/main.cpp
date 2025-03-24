@@ -17,7 +17,7 @@ int main() {
 	SetConsoleOutputCP(1251);
 
 	double value, m, c, t, x;
-	int lab_id, exercice_id, n;
+	int lab_id, exercice_id, n, lab_6_sublab_id, lab_6_sublab_2_method_id;
 	cout << "Номер лаболаторной работы: ";
 	cin >> lab_id;
 
@@ -61,7 +61,16 @@ int main() {
 	case (6):
 		cout << "Введите n (кол-во будующих элементов): ";
 		cin >> n;
-		cout << "Максимальная последовательность нулей: " << lab_006(n).prepare();
+		value = lab_006(n).prepare(&lab_6_sublab_id, &lab_6_sublab_2_method_id);
+		if (lab_6_sublab_id == 1) {
+			cout << "Максимальная последовательность нулей: " << value;
+		} else {
+			if (lab_6_sublab_2_method_id == 1) {
+				cout << "Кол - во в числах используя индекс: " << value;
+			} else {
+				cout << "Кол - во в числах используя итератор: " << value;
+			}
+		}
 		break;
 	}
 }
