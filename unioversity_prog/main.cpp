@@ -9,27 +9,27 @@
 #include "lab_003.cpp"
 #include "lab_004.cpp"
 #include "lab_005.cpp"
+#include "lab_006.cpp"
 using namespace std;
 int main() {
 	setlocale(LC_ALL, "Rus");
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	int lab_id;
+	double value, m, c, t, x;
+	int lab_id, exercice_id, n;
 	cout << "Номер лаболаторной работы: ";
 	cin >> lab_id;
 
 
 	switch (lab_id) {
 	case (1):
-		double value;
 		cout << "Напишите любое число: ";
 		cin >> value;
 		cout << lab_001(value).calc();
 		break;
 
 	case(2):
-		int exercice_id;
 		cout << "Напишите порядковый номер упражнения: ";
 		cin >> exercice_id;
 		lab_002(exercice_id).run_exercice();
@@ -37,7 +37,6 @@ int main() {
 		
 
 	case (3):
-		double m, c ,t;
 		cout << "Введите M: ";
 		cin >> m;
 		cout << "Введите C: ";
@@ -46,17 +45,24 @@ int main() {
 		cin >> t;
 		cout << lab_003(m, c ,t).calc();
 		break;
+
 	case (4):
-		double x;
 		cout << "Введите X <= 1000: ";
 		cin >> x;
 		cout << lab_004(x).calc();
 		break;
+
 	case (5):
-		int n;
 		cout << "Введите n (кол-во будующих элементов): ";
 		cin >> n;
 		lab_005(n).prepare();
+		break;
+
+	case (6):
+		cout << "Введите n (кол-во будующих элементов): ";
+		cin >> n;
+		cout << "Максимальная последовательность нулей: " << lab_006(n).prepare();
+		break;
 	}
 }
 
