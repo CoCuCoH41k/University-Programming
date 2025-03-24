@@ -10,13 +10,14 @@
 #include "lab_004.cpp"
 #include "lab_005.cpp"
 #include "lab_006.cpp"
+#include "lab_007.cpp"
 using namespace std;
 int main() {
 	setlocale(LC_ALL, "Rus");
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	double value, m, c, t, x;
+	double value, m, c, t, x, min, max;
 	int lab_id, exercice_id, n, lab_6_sublab_id, lab_6_sublab_2_method_id;
 	cout << "Номер лаболаторной работы: ";
 	cin >> lab_id;
@@ -72,6 +73,17 @@ int main() {
 			}
 		}
 		break;
+
+	case (7):
+		cout << "Введите размер матрицы n: ";
+		cin >> n;
+		cout << "Введите размер матрицы m: ";
+		cin >> m;
+		cout << "Введите минимальное допустимое число для генерации: ";
+		cin >> min;
+		cout << "Введите максимальное допустимое число для генерации: ";
+		cin >> max;
+
+		lab_007(n, m, min, max).calc();
 	}
 }
-

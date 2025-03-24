@@ -4,6 +4,7 @@
 #include <random>
 #include <string>
 #include <conio.h>
+#include "rnd.cpp"
 using namespace std;
 class lab_006 {
 public:
@@ -73,7 +74,7 @@ private:
 		cout << "Введите максимальное число диапозона: ";
 		cin >> maxRng;
 
-		arr = generate_random_int_arr(n, minRng, maxRng);
+		arr = rnd(minRng, maxRng).generate_random_int_arr(n);
 
 		printf("Сгенерированные случайные числа [%d, %d]:", minRng, maxRng); cout << endl << endl;
 		for (int i = 0; i < n; i++) {
@@ -139,20 +140,5 @@ private:
 		}
 
 		return digid_cnt;
-	}
-
-	// ================================================================================================ Для генерации случайных массиво.
-	int* generate_random_int_arr(int size, int min, int max) { // Генерация массива случайных чисел относительно длинны массива (size) и диапозона допустимых занчений (min, max)
-		int* temp_arr_GRIA = new int[size];
-
-		std::random_device rnd;
-		std::mt19937 gen(rnd());
-		std::uniform_int_distribution<> distr(min, max);
-
-		for (int i = 0; i < size; i++) {
-			temp_arr_GRIA[i] = distr(gen);
-		}
-
-		return temp_arr_GRIA;
 	}
 };
