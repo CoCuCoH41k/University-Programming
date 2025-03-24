@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/unioversity_prog/Лаб 3.pdf
+*.pdf
+*.zip
+*.txt
+/unioversity_prog/unioversity_prog.vcxproj
+/unioversity_prog/unioversity_prog.vcxproj.filters

@@ -7,6 +7,7 @@
 #include "lab_001.cpp"
 #include "lab_002.cpp"
 #include "lab_003.cpp"
+#include "lab_004.cpp"
 using namespace std;
 int main() {
 	setlocale(LC_ALL, "Rus");
@@ -16,6 +17,7 @@ int main() {
 	int lab_id;
 	cout << "Номер лаболаторной работы: ";
 	cin >> lab_id;
+
 
 	switch (lab_id) {
 	case (1):
@@ -31,6 +33,7 @@ int main() {
 		cin >> exercice_id;
 		lab_002(exercice_id).run_exercice();
 		break;
+		
 
 	case (3):
 		double m, c ,t;
@@ -41,6 +44,12 @@ int main() {
 		cout << "Введите T: ";
 		cin >> t;
 		cout << lab_003(m, c ,t).calc();
+		break;
+	case (4):
+		double x;
+		cout << "Введите X <= 1000: ";
+		cin >> x;
+		cout << lab_004(x).calc();
 		break;
 	}
 }
