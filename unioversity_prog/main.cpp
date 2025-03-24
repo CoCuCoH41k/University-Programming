@@ -8,6 +8,7 @@
 #include "lab_002.cpp"
 #include "lab_003.cpp"
 #include "lab_004.cpp"
+#include "lab_005.cpp"
 using namespace std;
 int main() {
 	setlocale(LC_ALL, "Rus");
@@ -51,6 +52,11 @@ int main() {
 		cin >> x;
 		cout << lab_004(x).calc();
 		break;
+	case (5):
+		int n;
+		cout << "¬ведите n (кол-во будующих элементов): ";
+		cin >> n;
+		lab_005(n).prepare();
 	}
 }
 
