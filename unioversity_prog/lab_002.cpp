@@ -6,9 +6,7 @@ class lab_002 {
 public:
 	int exercice_id;
 
-	lab_002(int exercice_id) {
-		this->exercice_id = exercice_id;
-	}
+	lab_002(int exercice_id) : exercice_id(exercice_id) {}
 
 	int run_exercice() {
 		switch (this->exercice_id)

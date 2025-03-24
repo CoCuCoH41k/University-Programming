@@ -5,9 +5,7 @@ class lab_004 {
 public:
 	double x, x_float, x_int;
 
-
-	lab_004(double x) {
-		this->x = x;
+	lab_004(double x) : x(x) {
 		x_float = x_int = 0;
 	}
 

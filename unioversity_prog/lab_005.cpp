@@ -5,9 +5,7 @@ using namespace std;
 class lab_005 {
 public:
 	int n;
-	lab_005(int n) {
-		this->n = n;
-	}
+	lab_005(int n) : n(n) {}
 
 	int prepare() {
 		std::list<double> filtred_values;
