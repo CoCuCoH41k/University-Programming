@@ -10,7 +10,4 @@ public:
 
 	lab_007(int n, int m, int minRng, int maxRng);
 	void calc();
-
-private:
-	void prepare_A_2D_array();
 };

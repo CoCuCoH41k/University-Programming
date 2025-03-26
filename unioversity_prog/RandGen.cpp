@@ -15,7 +15,7 @@ int* RandGen::generate_random_int_1D_arr(int size, int minRng, int maxRng)
 }
 
 long int** RandGen::generate_random_int_2D_arr(int nSize, int mSize, int minRng, int maxRng) {
-	long int** A; long long int* B;
+	long int** A = new long int* [nSize];
 	for (int i = 0; i < mSize; i++) {
 		A[i] = (long int*)RandGen::generate_random_int_1D_arr(nSize, minRng, maxRng);
 	}

@@ -62,7 +62,7 @@ int lab_006::random_generation() { // јвтоматическа€ генераци€ по указаному диап
 	cout << "¬ведите максимальное число диапозона: ";
 	cin >> maxRng;
 
-	arr = RandGen::generate_random_int_arr(n, minRng, maxRng);
+	arr = RandGen::generate_random_int_1D_arr(n, minRng, maxRng);
 
 	printf("—генерированные случайные числа [%d, %d]:", minRng, maxRng); cout << endl << endl;
 	for (int i = 0; i < n; i++) {
