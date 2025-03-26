@@ -134,7 +134,24 @@
     <ClCompile Include="lab_005.cpp" />
     <ClCompile Include="lab_006.cpp" />
     <ClCompile Include="lab_007.cpp" />
+    <ClCompile Include="lab_008.cpp" />
+    <ClCompile Include="lab_008_check_sum.cpp" />
+    <ClCompile Include="lab_008_simple_value.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="RandGen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lab_001.h" />
+    <ClInclude Include="lab_002.h" />
+    <ClInclude Include="lab_003.h" />
+    <ClInclude Include="lab_004.h" />
+    <ClInclude Include="lab_005.h" />
+    <ClInclude Include="lab_006.h" />
+    <ClInclude Include="lab_007.h" />
+    <ClInclude Include="lab_008.h" />
+    <ClInclude Include="lab_008_check_sum.h" />
+    <ClInclude Include="lab_008_simple_value.h" />
+    <ClInclude Include="RandGen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

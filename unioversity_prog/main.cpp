@@ -4,13 +4,14 @@
 #include <iomanip>     // ƒл€ system
 #include <string>
 #include <windows.h>   // ƒругое дл€ русского €зыка
-#include "lab_001.cpp"
-#include "lab_002.cpp"
-#include "lab_003.cpp"
-#include "lab_004.cpp"
-#include "lab_005.cpp"
-#include "lab_006.cpp"
-#include "lab_007.cpp"
+#include "lab_001.h"
+#include "lab_002.h"
+#include "lab_003.h"
+#include "lab_004.h"
+#include "lab_005.h"
+#include "lab_006.h"
+#include "lab_007.h"
+#include "lab_008.h"
 using namespace std;
 int main() {
 	setlocale(LC_ALL, "Rus");
@@ -56,7 +57,7 @@ int main() {
 	case (5):
 		cout << "¬ведите n (кол-во будующих элементов): ";
 		cin >> n;
-		lab_005(n).prepare();
+		lab_005(n).calc();
 		break;
 
 	case (6):
@@ -85,5 +86,19 @@ int main() {
 		cin >> max;
 
 		lab_007(n, m, min, max).calc();
+		break;
+
+	case (8):
+		cout << "¬ведите размер матрицы n: ";
+		cin >> n;
+		cout << "¬ведите размер матрицы m: ";
+		cin >> m;
+		cout << "¬ведите минимальное допустимое число дл€ генерации: ";
+		cin >> min;
+		cout << "¬ведите максимальное допустимое число дл€ генерации: ";
+		cin >> max;
+
+		lab_008(n, m, min, max).calc();
+		break;
 	}
 }

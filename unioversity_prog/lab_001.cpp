@@ -1,13 +1,6 @@
-#include <cmath>
+#include "lab_001.h"
 using namespace std;
-class lab_001 {
-public:
-	double val;
-	
-	lab_001(double val) : val(val) {};
 
-	double calc() {
-		return std::pow(2, std::ceil(std::log2(this->val)));
-	}
-};
+lab_001::lab_001(double val) : val(val) {};
 
+double lab_001::calc() { return std::pow(2, std::ceil(std::log2(this->val))); }
