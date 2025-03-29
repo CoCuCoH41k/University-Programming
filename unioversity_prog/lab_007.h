@@ -2,6 +2,7 @@
 #include <cmath>
 #include <iostream>
 #include "RandGen.h"
+#include "ArrayCOUT.h"
 using namespace std;
 class lab_007 {
 public:

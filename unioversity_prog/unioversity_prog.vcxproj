@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArrayCOUT.cpp" />
     <ClCompile Include="lab_001.cpp" />
     <ClCompile Include="lab_002.cpp" />
     <ClCompile Include="lab_003.cpp" />
@@ -141,6 +142,7 @@
     <ClCompile Include="RandGen.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArrayCOUT.h" />
     <ClInclude Include="lab_001.h" />
     <ClInclude Include="lab_002.h" />
     <ClInclude Include="lab_003.h" />

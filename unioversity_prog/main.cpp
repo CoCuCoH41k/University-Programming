@@ -19,8 +19,11 @@ int main() {
 	SetConsoleOutputCP(1251);
 
 	double value, m, c, t, x, min, max;
-	int lab_id, exercice_id, n, lab_6_sublab_id, lab_6_sublab_2_method_id;
-	cout << "Номер лаболаторной работы: ";
+	int lab_id, exercice_id, n;
+
+	BACK_TO_START :
+
+	cout << "Номер лаболаторной работы (0 для выхода): ";
 	cin >> lab_id;
 
 
@@ -29,15 +32,16 @@ int main() {
 		cout << "Напишите любое число: ";
 		cin >> value;
 		cout << lab_001(value).calc();
-		break;
+		cout << endl; system("pause"); system("cls");
+		goto BACK_TO_START;
 
 	case(2):
 		cout << "Напишите порядковый номер упражнения: ";
 		cin >> exercice_id;
 		lab_002(exercice_id).run_exercice();
-		break;
+		cout << endl; system("pause"); system("cls");
+		goto BACK_TO_START;
 		
-
 	case (3):
 		cout << "Введите M: ";
 		cin >> m;
@@ -46,34 +50,29 @@ int main() {
 		cout << "Введите T: ";
 		cin >> t;
 		cout << lab_003(m, c ,t).calc();
-		break;
+		cout << endl; system("pause"); system("cls");
+		goto BACK_TO_START;
 
 	case (4):
 		cout << "Введите X <= 1000: ";
 		cin >> x;
 		cout << lab_004(x).calc();
-		break;
+		cout << endl; system("pause"); system("cls");
+		goto BACK_TO_START;
 
 	case (5):
 		cout << "Введите n (кол-во будующих элементов): ";
 		cin >> n;
 		lab_005(n).calc();
-		break;
+		cout << endl; system("pause"); system("cls");
+		goto BACK_TO_START;
 
 	case (6):
 		cout << "Введите n (кол-во будующих элементов): ";
 		cin >> n;
-		value = lab_006(n).prepare(&lab_6_sublab_id, &lab_6_sublab_2_method_id);
-		if (lab_6_sublab_id == 1) {
-			cout << "Максимальная последовательность нулей: " << value;
-		} else {
-			if (lab_6_sublab_2_method_id == 1) {
-				cout << "Кол - во в числах используя индекс: " << value;
-			} else {
-				cout << "Кол - во в числах используя итератор: " << value;
-			}
-		}
-		break;
+		lab_006(n).prepare();
+		cout << endl; system("pause"); system("cls");
+		goto BACK_TO_START;
 
 	case (7):
 		cout << "Введите размер матрицы n: ";
@@ -86,7 +85,8 @@ int main() {
 		cin >> max;
 
 		lab_007(n, m, min, max).calc();
-		break;
+		cout << endl; system("pause"); system("cls");
+		goto BACK_TO_START;
 
 	case (8):
 		cout << "Введите размер матрицы n: ";
@@ -99,6 +99,15 @@ int main() {
 		cin >> max;
 
 		lab_008(n, m, min, max).calc();
+		cout << endl; system("pause"); system("cls");
+		goto BACK_TO_START;
+
+	default:
+		system("cls");
+		goto BACK_TO_START;
+
+	case (0):
+		system("cls");
 		break;
 	}
 }

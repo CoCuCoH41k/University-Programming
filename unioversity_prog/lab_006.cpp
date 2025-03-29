@@ -5,9 +5,7 @@ lab_006::lab_006(int n) : n(n) {
 	arr = new int[n];
 }
 
-int lab_006::prepare(int* sl_id, int* sl_2_m_i) {
-	sl_id = sl_2_m_i = 0;
-
+int lab_006::prepare() {
 	cout << "Часть лабораторной работы? ";
 	cin >> sublab_id;
 
@@ -27,8 +25,6 @@ int lab_006::prepare(int* sl_id, int* sl_2_m_i) {
 		break;
 	}
 
-	sl_id = (int*)sublab_id;
-	sl_2_m_i = (int*)sublab_2_method_id;
 	cout << "Как вы хотите заполнить массив?\n1 - Вручную.\n2 - Генерация случаных чисел" << endl;
 	int choise;
 	cin >> choise;
@@ -64,21 +60,6 @@ int lab_006::random_generation() { // Автоматическая генерация по указаному диап
 
 	arr = RandGen::generate_random_int_1D_arr(n, minRng, maxRng);
 
-	printf("Сгенерированные случайные числа [%d, %d]:", minRng, maxRng); cout << endl << endl;
-	for (int i = 0; i < n; i++) {
-		std::string temp = std::to_string(arr[i]);
-		for (char digit : temp) {
-			if (digit == this->digit) {
-				cout << "\033[31m" << digit << "\033[0m";
-			}
-			if (digit != this->digit) {
-				cout << digit;
-			}
-		}
-		cout << " ";
-	}
-	cout << endl << endl;
-
 	return (sublab_id == 1) ? sublab_1() : (sublab_2_method_id == 1) ? sublab_2_using_index() : sublab_2_using_iteration();
 }
 
@@ -86,28 +67,37 @@ int lab_006::random_generation() { // Автоматическая генерация по указаному диап
 int lab_006::sublab_1() {
 	int max_zl = 0;
 	int zeros_lenght = 0;
+
+	ArrayCOUT::showIntArray1D_UC_per_value(n, arr, [](int curr_value) { return curr_value == 0; });
+
 	for (int i = 0; i < n - 1; i++)
 	{
 		if (arr[i] == 0 && arr[i + 1] == 0) {
 			zeros_lenght++;
+			continue;
 		}
 
 		if (arr[i] == 0 && arr[i + 1] != 0) {
 			zeros_lenght++;
 			max_zl = max(max_zl, zeros_lenght);
+			continue;
 		}
 
 		if (arr[i] != 0) {
 			zeros_lenght = 0;
+			continue;
 		}
 	}
 
-	return max_zl;
+	cout << "Максимальная последовательность нулей: " << max_zl;
+	return 0;
 }
 
 	// ================================================================================================ Лаба 6.2
 int lab_006::sublab_2_using_index() {
 	int digid_cnt = 0;
+
+	ArrayCOUT::showIntArray1D_UC_per_digit(n, arr, [this](char curr_digit) { return curr_digit == this->digit; });
 
 	for (int i = 0; i < n; i++) {
 		for (char digit : std::to_string(arr[i])) {
@@ -115,11 +105,14 @@ int lab_006::sublab_2_using_index() {
 		}
 	}
 
-	return digid_cnt;
+	cout << "Кол - во " << this->digit << " в числах используя индекс: " << digid_cnt;
+	return 0;
 }
 
 int lab_006::sublab_2_using_iteration() {
 	int digid_cnt = 0;
+
+	ArrayCOUT::showIntArray1D_UC_per_digit(n, arr, [this](char curr_digit) { return curr_digit == this->digit; });
 
 	for (int* it = arr; it < arr + n; it++) {
 		for (char digit : std::to_string(*it)) {
@@ -127,5 +120,6 @@ int lab_006::sublab_2_using_iteration() {
 		}
 	}
 
-	return digid_cnt;
+	cout << "Кол - во " << this->digit << " в числах используя итератор: " << digid_cnt;
+	return 0;
 }

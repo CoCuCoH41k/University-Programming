@@ -14,8 +14,5 @@ void lab_007::calc() {
 	}
 
 	cout << "Вывод массива B[m]:\n";
-	for (int i = 0; i < m; i++)
-	{
-		cout << B[i] << " ";
-	}
+	ArrayCOUT::showIntArray1D_ll(m, B);
 }
